@@ -1,4 +1,4 @@
 # softwareudvikling
-# Repository-udvikling
-# Gruppemedlemmer: Oliver, Johan, Jonathan, Tobias
-# Sprog: C#
+Repository-udvikling
+Gruppemedlemmer: Oliver, Johan, Jonathan, Tobias
+Sprog: C#
