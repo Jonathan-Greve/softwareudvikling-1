@@ -1,6 +1,7 @@
 # Softwareudvikling
-Denne README-fil er dokumentation på projektets forløb.
+Denne README-fil er dokumentation pÃ¥ projektets forlÃ¸b.
 Gruppemedlemmer: Oliver Malling, Johan Lundberg, Jonathan Greve, Tobias Stier
-Sprog: C#.
-Tools: EMACS, CODE, Microsoft Visual Studio
-Kommentarer i koden skrives på engelsk.
+Sprog: C#
+Tools: EMACS, Xamarin Studio, Microsoft Visual Studio 2015
+Kodekommentarer skrives pÃ¥ engelsk.
+Rapporten skrives pÃ¥ engelsk.
