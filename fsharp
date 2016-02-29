@@ -1,0 +1,4 @@
+let rec greed = function
+  | 0 -> 0
+  | 1 -> 1
+  | n -> greed (n-1) + greed(n-2)  
