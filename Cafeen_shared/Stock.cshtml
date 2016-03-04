@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "_LayoutPage.cshtml";
+    Page.Title = "Stock";
+    
+    var db = Database.Open("Cafeen");
+    var data = db.Query("SELECT * FROM stock");
+
+
+
+}
+<div id="stock-wrapper">
+    <div id="stock-favorite" class="display-content-box">
+        <div id="stock-favorite-header">
+            <h2>Stock</h2>
+        </div>
+        <table id="stock-table">
+            <caption><p>Sort by selcting a category or use the sort function to use other sorting methods</p></caption>
+            <caption><a href="#">Light øl</a> - <a href="#">lux øl</a> - <a href="#">Special øl</a> - <a href="#">Normal øl</a> - <a href="#">sodavand</a><input class="button-design" type="button" value="sort" /></caption>
+           
+            <tr>    
+                <th class="tablehead-style">Name</th>
+                <th class="tablehead-style">QTY.</th>
+                <th class="tablehead-style">Category</th>
+                <th class="tablehead-style">Price</th>
+            </tr>
+             @{ foreach (var row in data) {
+            <tr>
+                <td>@row.stockName</td>
+                <td>@row.stockQuantity</td>
+                <td>@row.stockCategory</td>
+                <td>@row.stockPrice kr.</td>
+            </tr>
+                }
+            }
+        </table>
+    </div>
+</div>

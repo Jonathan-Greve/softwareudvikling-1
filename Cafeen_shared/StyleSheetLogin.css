@@ -1,0 +1,46 @@
+* {
+    margin: 0 auto;
+}
+
+#wrapper {
+    position: relative;
+    width: 1024px;
+    height: auto;
+    font-family:  Arial;
+
+}
+
+h3 {
+    text-align: center;
+    padding: 20px;
+}
+
+#logo_login {
+    margin-top: 50px;
+    margin-left: 400px;
+}
+
+form {
+    width: 200px;
+    margin-top: 20px;
+}
+
+#content-wraper{
+    
+}
+
+#login_button {
+    width: 100%;
+}
+
+.button-design{
+    color: White;
+    border: 0;
+    padding: 10px;
+    background: #4a7eb2; /* Old browsers */
+    background: -moz-linear-gradient(top, #4a7eb2 0%, #1e5799 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #4a7eb2 0%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #4a7eb2 0%,#1e5799 100%);
+    box-shadow: 1px 1px 3px #888888;
+}
+

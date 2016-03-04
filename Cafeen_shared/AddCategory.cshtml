@@ -1,0 +1,27 @@
+﻿@{
+
+    Layout = "_LayoutPage.cshtml";
+    Page.Title = "Add category";
+ 
+       var catName = "";
+       var catQuantity = "";
+
+       if(IsPost)
+       {
+          catName = Request["formCatName"];
+          catQuantity = Request["formCatQuantity"];
+          
+          var db = Database.Open("Cafeen");
+          db.Execute("INSERT INTO categories (CatName, CatQuantity) VALUES (@0, @1)", catName, catQuantity);
+          Response.Redirect("Categories.cshtml");  
+       }    
+}
+
+
+<h1>Add a new category</h1>
+<form action="" method="post">
+    <p>Category name:<br /><input class="TextInput" type="text" name="formCatName" /></p>
+    <p>Quantity:<br /><input type="text" name="formCatQuantity" /></p>
+    <input class="button-design" type="button" name="ReturnCategory" value="Go back" onclick="window.location='Categories.cshtml'" />
+    <input class="button-design" type="submit" name="AddCategory" value="Add Category" />
+</form>
