@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "_LayoutPage.cshtml";
+    Page.Title = "Products";
+    
+    var db = Database.Open("Cafeen");
+    var data = db.Query("SELECT * FROM stock");
+}
+<div id="goods-list">
+<table id="table-category">
+    <caption><span class="table-headline">Products</span><input id="add-button-goods" type="button" value="Add product" 
+        name="AddButtonCat" onclick="window.location='AddCategory.cshtml'"/></caption>
+    <thead>
+        <tr>
+            <th class="tablehead-style">Name</th>
+            <th class="tablehead-style">Quantity</th>
+            <th class="tablehead-style">Category</th>
+            <th class="tablehead-style">Price</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var row in data) {
+        <tr>
+            <td>@row.stockName</td>
+            <td>@row.stockQuantity</td>
+            <td>@row.stockCategory</td>
+            <td>@row.stockPrice kr.</td>
+            
+            <td><input id="edit-button-cat" type="button" name="EditButtonCat" value="Edit" 
+                onclick="window.location='EditGoods?CatID=@row.ID'"></td>
+            <td><input id="delete-button-cat" type="button" name="DeleteButtonCat" value="Delete"
+                    onclick="window.location='DeletePage?CatID=@row.ID'"></td>
+        </tr>
+            }
+        }
+    </tbody>
+</table>
+    </div>
+<div id="stock-list-number-wrapper">
+        <section id="stock-list-number-left">
+            <p>Showing 10 out of 57 entries</p>
+        </section>
+        <section id="stock-list-number-right">
+        <ul>
+            <li>Previous</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>Next</li>
+        </ul>
+        </section>
+    </div>
+<div>
+    <input class="button-design" type="button" value="Go back" onclick="window.location='Stock.cshtml'" />
+</div>

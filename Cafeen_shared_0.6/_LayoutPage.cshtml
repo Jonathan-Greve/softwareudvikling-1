@@ -1,0 +1,75 @@
+﻿@{
+    
+     // implement a function that takes the username of the logged in user so as to be used for "logged in as: @user"
+        
+    if (Session["username"] == null)
+    {
+        Response.Redirect("LoginPage.cshtml");
+    }
+    
+    // not a solid solution because it logs out whenever a random post is run
+    if(IsPost) {
+        Session.Clear();
+        Session.Abandon();
+        Response.Redirect("LoginPage.cshtml");
+    }
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@Page.Title</title>
+        <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+    </head>
+    <body>
+       <div id="wrapper">
+           
+        <header>
+            <div id="overhead-info">
+                <a href="Default.cshtml"><img id="logo" src="Images/cafeen.png" alt="Logo" height="150px" width="150px" /></a>
+      
+                    <p>Logged in as: Dummy | </p>
+                    <form action="" method="post">
+                        <input type="submit" name="logout_session" onclick="" value="logout"/>
+                    </form>
+             
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Default.cshtml">Home</a></li>
+                    <li><a href="Stock.cshtml">Stock</a></li>
+                    <li><a href="#">Accounting Management</a></li>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Report</a></li>
+                </ul>
+            </nav>
+             <!--<div id="path">
+                 <ul>
+                    <li>home / path /</li>
+                 </ul>
+             </div>-->
+        </header>
+
+           <div id="page-title">
+                <h2>@Page.Title</h2>
+           </div>
+
+        <!-- ******************** Start of Dynamic content ******************** -->
+        <div id="main-content">
+            @RenderBody()
+        </div>
+         <!-- ******************** End of Dynamic content ******************** -->
+
+        <footer>
+            <ul>
+                <li>Copyright 2016 Cafeen?</li>
+                <li>Back-end system</li>
+                <li>Supporters: Group C1</li>
+            </ul>
+        </footer>
+
+       </div>
+    </body>
+</html>
